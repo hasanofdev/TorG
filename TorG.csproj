@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Static Files\img\add-user.png" />
+    <None Remove="Static Files\img\bg-header.png" />
+    <None Remove="Static Files\img\bg-window.png" />
+    <None Remove="Static Files\img\home.png" />
+    <None Remove="Static Files\img\icon.png" />
+    <None Remove="Static Files\img\log-in.png" />
+    <None Remove="Static Files\img\logo.png" />
+    <None Remove="Static Files\img\main.png" />
+    <None Remove="Static Files\img\search-tool.png" />
+    <None Remove="Static Files\img\windows.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Static Files\img\add-user.png" />
+    <Resource Include="Static Files\img\bg-header.png" />
+    <Resource Include="Static Files\img\bg-window.png" />
+    <Resource Include="Static Files\img\home.png" />
+    <Resource Include="Static Files\img\icon.png" />
+    <Resource Include="Static Files\img\log-in.png" />
+    <Resource Include="Static Files\img\logo.png" />
+    <Resource Include="Static Files\img\main.png" />
+    <Resource Include="Static Files\img\search-tool.png" />
+    <Resource Include="Static Files\img\windows.png" />
+  </ItemGroup>
+
+</Project>
