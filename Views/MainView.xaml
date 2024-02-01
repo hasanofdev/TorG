@@ -8,6 +8,9 @@
         xmlns:views="clr-namespace:TorG.Views"
         mc:Ignorable="d"
         Title="MainView" Height="450" Width="800" WindowState="Maximized" MinWidth="1155">
+    <Window.Icon>
+        <BitmapImage UriSource="../Static Files/img/logo-icon.ico" DecodePixelHeight="150"/>
+    </Window.Icon>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
