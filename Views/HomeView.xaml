@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:product_control="clr-namespace:TorG.Assets.User_Controls"
              xmlns:local="clr-namespace:TorG.Views"
              mc:Ignorable="d" 
              d:DesignHeight="4000"
@@ -18,8 +19,7 @@
         <Grid
             Width="1140"
             Background="White"
-            Margin="0 40 0 0"
-            HorizontalAlignment="Center">
+            Margin="0 40 0 0">
             <Grid.Effect>
                 <DropShadowEffect 
                     Opacity=".7"
@@ -124,6 +124,7 @@
                         Background="White"
                         BorderThickness="0"
                         Margin="10 0 0 0"
+                        Command="{Binding SignInCommand}"
                         >
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
@@ -155,6 +156,7 @@
 
 
                 </StackPanel>
+
 
             </Grid>
 
@@ -1296,6 +1298,11 @@
                         </Grid>
                     </Border>
                 </Grid>
+
+
+                <WrapPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2" Background="Red">
+                    <!--Products-->
+                </WrapPanel>
             </Grid>
 
             <Grid Grid.Row="3"
@@ -1360,6 +1367,7 @@
                 VerticalAlignment="Center"
                 />
             </StackPanel>
+
         </Grid>
 
     </ScrollViewer>

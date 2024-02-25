@@ -1,0 +1,181 @@
+﻿<UserControl x:Class="TorG.Views.AdminPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TorG.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel 
+            Grid.Column="0"
+            Background="#2a2a2a">
+            <TextBlock
+                Text="TorG Games"
+                FontSize="23"
+                FontFamily="Sitka Small"
+                FontWeight="Bold"
+                Foreground="#12a6aa"
+                HorizontalAlignment="Center"
+                Margin="15"
+                />
+            
+
+            <Grid Margin="10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="../Static Files/img/24x24/home-icon24x24.png" Stretch="None"/>
+
+                <Button 
+                    Content="Home"
+                    FontSize="18"
+                    Foreground="White"
+                    Template="{DynamicResource menu_btn_temp}"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontFamily="sitka small"
+                    FontWeight="Bold"
+                    Cursor="Hand"
+                    Grid.Column="1"
+                    Margin="5 0"
+                />
+            </Grid>
+            
+            <Grid Margin="10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="../Static Files/img/24x24/statistics-icon24x24.png" Stretch="None"/>
+
+                <Button 
+                        Content="Statistics"
+                        FontSize="18"
+                        Foreground="White"
+                        Template="{DynamicResource menu_btn_temp}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="sitka small"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        Grid.Column="1"
+                        Margin="5 0"
+                    />
+            </Grid>
+            
+            <Grid Margin="10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="../Static Files/img/24x24/edit-icon24x24.png" Stretch="None"/>
+
+                <Button 
+                        Content="Edit Games"
+                        FontSize="18"
+                        Foreground="White"
+                        Template="{DynamicResource menu_btn_temp}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="sitka small"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        Grid.Column="1"
+                        Margin="5 0"
+                    />
+            </Grid>
+
+            <Grid Margin="10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="../Static Files/img/24x24/power-off-icon24x24.png" Stretch="None"/>
+
+                <Button 
+                        Content="Sign Out"
+                        FontSize="18"
+                        Foreground="White"
+                        Template="{DynamicResource menu_btn_temp}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="sitka small"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        Grid.Column="1"
+                        Margin="5 0"
+                    />
+            </Grid>
+
+        </StackPanel>
+
+
+        <!--#region Pages-->
+
+        <!--#region Page-Home-->
+
+        <Grid Grid.Column="1" Visibility="Hidden">
+            <TextBlock Text="Comming Soon!" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#12a6aa"/>
+        </Grid>
+
+        <!--#endregion-->
+        
+        <!--#region Page-Statistics-->
+
+        <Grid Grid.Column="1" Visibility="Hidden">
+            <TextBlock Text="Comming Soon!" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#12a6aa"/>
+        </Grid>
+
+        <!--#endregion-->
+        
+        <!--#region Page-Edit Games-->
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button 
+                    Grid.Column="0"
+                    BorderThickness="0"
+                    Template="{DynamicResource btn_temp}"
+                    Cursor="Hand"
+                    Command="{Binding ChooseFileCommand}"
+                    >
+                    <Button.Content>
+                        <StackPanel>
+                            <Image Source="{Binding EditPage_ImageSource}" Stretch="UniformToFill"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+        </Grid>
+
+        <!--#endregion-->
+        
+        <!--#endregion-->
+    </Grid>
+</UserControl>

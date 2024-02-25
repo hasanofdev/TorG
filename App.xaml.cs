@@ -1,8 +1,10 @@
 ﻿using Autofac;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Configuration;
 using System.Data;
 using System.Windows;
 using TorG.Navigations;
+using TorG.Repositories;
 using TorG.ViewModels;
 using TorG.Views;
 using IContainer = Autofac.IContainer;
@@ -18,6 +20,7 @@ namespace TorG
 
         public void ApplicationStartup(object sender, StartupEventArgs e)
         {
+
             NavigationStore navigationStore = new NavigationStore();
             var builder = new ContainerBuilder();
 
@@ -25,10 +28,12 @@ namespace TorG
 
             builder.RegisterType<MainViewModel>();
             builder.RegisterType<HomeViewModel>();
+            builder.RegisterType<LoginViewModel>();
+            builder.RegisterType<AdminPanelViewModel>();
 
             Container = builder.Build();
 
-            navigationStore.CurrentViewModel = Container.Resolve<HomeViewModel>();
+            navigationStore.CurrentViewModel = Container.Resolve<AdminPanelViewModel>();
             MainView mainView = new();
 
             mainView.DataContext = Container.Resolve<MainViewModel>();

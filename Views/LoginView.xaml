@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="TorG.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TorG.Views"
+             xmlns:usercontrols="clr-namespace:TorG.Assets.User_Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Static Files/img/bg-window.png"/>
+        </Grid.Background>
+
+        <Grid 
+            VerticalAlignment="Center" 
+            HorizontalAlignment="Center"
+            Width="400"
+            Height="300"
+            Background="White"
+            >
+
+            <Grid.Effect>
+                <DropShadowEffect Opacity=".7"
+                                  BlurRadius="70"
+                                  Direction="1"
+                                  ShadowDepth="0"/>
+            </Grid.Effect>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+                Grid.Column="1"
+                Grid.Row="0"
+                Text="TorG"
+                FontSize="46"
+                FontWeight="ExtraBold"
+                FontFamily="Comic Sans MS"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Foreground="#12a6aa"/>
+
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="100 25 100 0"
+                >
+                <TextBlock 
+                    Text="Username"
+                    FontSize="12"
+                    FontWeight="Medium"
+                    FontFamily="Montserrat"
+                    Foreground="#5C5C5C"
+                    Margin="10 8 0 0"
+                    />
+
+                <TextBox
+                    Margin="10 5 10 0"
+                    Padding="20 0 0 0"
+                    FontWeight="Medium"
+                    Foreground="Black"
+                    FontFamily="Montserrat"
+                    BorderBrush="DarkGray"
+                    CaretBrush="LightGray"
+                    BorderThickness="1 1 1 2"
+                    Height="28"
+                    VerticalContentAlignment="Center"
+                    FontSize="13"
+                    >
+                    <TextBox.Background>
+                        <ImageBrush ImageSource="../Static Files/img/user-icon.png" Stretch="None" AlignmentX="Left"/>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Password"
+                            Foreground="#5C5C5C"
+                            FontSize="12"
+                            FontWeight="Medium"
+                            FontFamily="Montserrat"
+                            Margin="10 8 0 0"/>
+
+                <usercontrols:BindablePasswordBox 
+                    Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    Margin="10 8 10 0"
+                    Height="28"
+                    />
+            </StackPanel>
+
+            <StackPanel 
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Orientation="Horizontal"
+                Margin="80 0"
+                >
+                <Button
+                    Content="Sign In"
+                    Width="60"
+                    Height="30"
+                    Template="{DynamicResource nav_btn_temp}"
+                    FontSize="12"
+                    BorderThickness="1"
+                    Background="#12a6aa"
+                    Foreground="#0D0027"
+                    FontWeight="Bold"
+                    BorderBrush="Azure"
+                    Cursor="Hand"
+                    Margin="10 0"
+                    />
+
+
+                <Button 
+                    Content="Home"
+                    Width="70"
+                    Height="30"
+                    Template="{DynamicResource nav_btn_temp}"
+                    FontSize="12"
+                    BorderThickness="1"
+                    Background="#12a6aa"
+                    Foreground="#0D0027"
+                    FontWeight="Bold"
+                    BorderBrush="Azure"
+                    Cursor="Hand"
+                    Command="{Binding BackHomeCommand}"
+                    />
+
+                <Button 
+                    Content="Sign Up"
+                    Width="70"
+                    Height="30"
+                    Template="{DynamicResource nav_btn_temp}"
+                    FontSize="12"
+                    BorderThickness="1"
+                    Background="#12a6aa"
+                    Foreground="#0D0027"
+                    FontWeight="Bold"
+                    BorderBrush="Azure"
+                    Cursor="Hand"
+                    Margin="10 0"
+                    />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
