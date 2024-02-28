@@ -1,22 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using TorG.Commands;
 using TorG.Navigations;
+using System.Security;
+using TorG.Extension_Methods;
 
 namespace TorG.ViewModels;
 
 class LoginViewModel : BaseViewModel
 {
+    private string _username;
+
+    public string Username
+    {
+        get { return _username; }
+        set { _username = value; OnPropertyChanged(nameof(Username)); }
+    }
 
     private readonly NavigationStore _navigationStore;
 
     #region CommandsProp
     public ICommand BackHomeCommand { get; set; }
+    public ICommand LoginCommand { get; set; }
 
     #endregion
 
@@ -25,6 +29,7 @@ class LoginViewModel : BaseViewModel
         _navigationStore = navigationStore;
 
         BackHomeCommand = new RelayCommand(ExecuteBackHomeCommand);
+        LoginCommand = new RelayCommand(ExecuteLoginCommand);
     }
 
     private void ExecuteBackHomeCommand(object? obj)
@@ -32,21 +37,20 @@ class LoginViewModel : BaseViewModel
         _navigationStore.CurrentViewModel = new HomeViewModel(_navigationStore);
     }
 
-    //private SecureString _password;
+    private SecureString _password;
 
-    //public SecureString Password
-    //{
-    //    get
-    //    {
-    //        return _password;
-    //    }
-    //    set
-    //    {
-    //        _password = value;
-    //        ErrorText = "";
-    //        OnPropertyChanged(nameof(Password));
-    //    }
-    //}
+    public SecureString Password
+    {
+        get
+        {
+            return _password;
+        }
+        set
+        {
+            _password = value;
+            OnPropertyChanged(nameof(Password));
+        }
+    }
 
 
     //private string _errortext;
@@ -56,4 +60,11 @@ class LoginViewModel : BaseViewModel
     //    get { return _errortext; }
     //    set { _errortext = value; OnPropertyChanged(nameof(ErrorText)); }
     //}
+
+    private void ExecuteLoginCommand(object? obj)
+    {
+        if (Username == "elshad" || Password.ToStringForSecureStr() == "2005")
+                _navigationStore.CurrentViewModel = new AdminPanelViewModel(_navigationStore);
+
+    }
 }

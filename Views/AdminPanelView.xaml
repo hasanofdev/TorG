@@ -4,18 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TorG.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="4*"/>
-        </Grid.ColumnDefinitions>
+             mc:Ignorable="d"
+             Background="White" d:DesignHeight="1000">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer.Background>
+            <ImageBrush ImageSource="../Static Files/img/bg-window.png"/>
+        </ScrollViewer.Background>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
 
-        <StackPanel 
+            <StackPanel 
             Grid.Column="0"
             Background="#2a2a2a">
-            <TextBlock
+                <TextBlock
                 Text="TorG Games"
                 FontSize="23"
                 FontFamily="Sitka Small"
@@ -24,18 +28,18 @@
                 HorizontalAlignment="Center"
                 Margin="15"
                 />
-            
 
-            <Grid Margin="10">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
+                <Grid Margin="10">
 
-                <Image Source="../Static Files/img/24x24/home-icon24x24.png" Stretch="None"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Button 
+                    <Image Source="../Static Files/img/24x24/home-icon24x24.png" Stretch="None"/>
+
+                    <Button 
                     Content="Home"
                     FontSize="18"
                     Foreground="White"
@@ -48,18 +52,18 @@
                     Grid.Column="1"
                     Margin="5 0"
                 />
-            </Grid>
-            
-            <Grid Margin="10">
+                </Grid>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
+                <Grid Margin="10">
 
-                <Image Source="../Static Files/img/24x24/statistics-icon24x24.png" Stretch="None"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Button 
+                    <Image Source="../Static Files/img/24x24/statistics-icon24x24.png" Stretch="None"/>
+
+                    <Button 
                         Content="Statistics"
                         FontSize="18"
                         Foreground="White"
@@ -72,19 +76,19 @@
                         Grid.Column="1"
                         Margin="5 0"
                     />
-            </Grid>
-            
-            <Grid Margin="10">
+                </Grid>
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
+                <Grid Margin="10">
 
-                <Image Source="../Static Files/img/24x24/edit-icon24x24.png" Stretch="None"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Button 
-                        Content="Edit Games"
+                    <Image Source="../Static Files/img/24x24/games-icon24x24.png" Stretch="None"/>
+
+                    <Button 
+                        Content="Games"
                         FontSize="18"
                         Foreground="White"
                         Template="{DynamicResource menu_btn_temp}"
@@ -96,18 +100,42 @@
                         Grid.Column="1"
                         Margin="5 0"
                     />
-            </Grid>
+                </Grid>
 
-            <Grid Margin="10">
+                <Grid Margin="10">
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
 
-                <Image Source="../Static Files/img/24x24/power-off-icon24x24.png" Stretch="None"/>
+                    <Image Source="../Static Files/img/24x24/add-game-icon24x24.png" Stretch="None"/>
 
-                <Button 
+                    <Button 
+                        Content="Add Game"
+                        FontSize="18"
+                        Foreground="White"
+                        Template="{DynamicResource menu_btn_temp}"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="sitka small"
+                        FontWeight="Bold"
+                        Cursor="Hand"
+                        Grid.Column="1"
+                        Margin="5 0"
+                    />
+                </Grid>
+
+                <Grid Margin="10">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="../Static Files/img/24x24/power-off-icon24x24.png" Stretch="None"/>
+
+                    <Button 
                         Content="Sign Out"
                         FontSize="18"
                         Foreground="White"
@@ -120,62 +148,436 @@
                         Grid.Column="1"
                         Margin="5 0"
                     />
+                </Grid>
+
+            </StackPanel>
+
+
+            <!--#region Pages-->
+
+            <!--#region Page-Home-->
+
+            <Grid Grid.Column="1" Visibility="Hidden">
+                <TextBlock Text="Comming Soon!" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#12a6aa"/>
             </Grid>
 
-        </StackPanel>
+            <!--#endregion-->
 
+            <!--#region Page-Statistics-->
 
-        <!--#region Pages-->
+            <Grid Grid.Column="1" Visibility="Hidden">
+                <TextBlock Text="Comming Soon!" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#12a6aa"/>
+            </Grid>
 
-        <!--#region Page-Home-->
+            <!--#endregion-->
 
-        <Grid Grid.Column="1" Visibility="Hidden">
-            <TextBlock Text="Comming Soon!" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#12a6aa"/>
-        </Grid>
+            <!--#region Page-Add Games-->
 
-        <!--#endregion-->
-        
-        <!--#region Page-Statistics-->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="230"/>
+                    <RowDefinition Height="120"/>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="70"/>
+                </Grid.RowDefinitions>
 
-        <Grid Grid.Column="1" Visibility="Hidden">
-            <TextBlock Text="Comming Soon!" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#12a6aa"/>
-        </Grid>
-
-        <!--#endregion-->
-        
-        <!--#region Page-Edit Games-->
-
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-
-                <Button 
-                    Grid.Column="0"
+                <Grid Grid.Row="0" Margin="80 0"
+                  >
+                    <Grid.Background>
+                        <ImageBrush ImageSource="{Binding EditPage_MainPhoto}" Stretch="UniformToFill" Opacity="0.3"/>
+                    </Grid.Background>
+                    <Button
+                    Name="MainPhoto"
                     BorderThickness="0"
                     Template="{DynamicResource btn_temp}"
                     Cursor="Hand"
                     Command="{Binding ChooseFileCommand}"
+                    CommandParameter="{Binding ElementName=MainPhoto}"
+                    Width="460" Height="215"
                     >
-                    <Button.Content>
-                        <StackPanel>
-                            <Image Source="{Binding EditPage_ImageSource}" Stretch="UniformToFill"/>
-                        </StackPanel>
-                    </Button.Content>
-                </Button>
+                        <Button.Content>
+                            <Image Source="{Binding EditPage_MainPhoto}" Stretch="Uniform"/>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+
+                <StackPanel
+                Grid.Row="1"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                Margin="0 10 0 0"
+                >
+
+                    <Button
+                        Name="photo1"
+                        BorderThickness="0"
+                        Template="{DynamicResource btn_temp}"
+                        Cursor="Hand"
+                        Command="{Binding ChooseFileCommand}"
+                        CommandParameter="{Binding ElementName=photo1}"
+                        Width="100"
+                        Height="100"
+                        Margin="10 0"
+                    >
+                        <Button.Content>
+                            <Image Source="{Binding EditPage_Photo1}" Stretch="UniformToFill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button
+                        Name="photo2"
+                        BorderThickness="0"
+                        Template="{DynamicResource btn_temp}"
+                        Cursor="Hand"
+                        Command="{Binding ChooseFileCommand}"
+                        CommandParameter="{Binding ElementName=photo2}"
+                        Width="100"
+                        Height="100"
+                        Margin="10 0"
+                    >
+                        <Button.Content>
+                            <Image Source="{Binding EditPage_Photo2}" Stretch="UniformToFill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button
+                        Name="photo3"
+                        BorderThickness="0"
+                        Template="{DynamicResource btn_temp}"
+                        Cursor="Hand"
+                        Command="{Binding ChooseFileCommand}"
+                        CommandParameter="{Binding ElementName=photo3}"
+                        Width="100"
+                        Height="100"
+                        Margin="10 0"
+                    >
+                        <Button.Content>
+                            <Image Source="{Binding EditPage_Photo3}" Stretch="UniformToFill"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button
+                        Name="photo4"
+                        BorderThickness="0"
+                        Template="{DynamicResource btn_temp}"
+                        Cursor="Hand"
+                        Command="{Binding ChooseFileCommand}"
+                        CommandParameter="{Binding ElementName=photo4}"
+                        Width="100"
+                        Height="100"
+                        Margin="10 0"
+                    >
+                        <Button.Content>
+                            <Image Source="{Binding EditPage_Photo4}" Stretch="UniformToFill"/>
+                        </Button.Content>
+                    </Button>
+
+                </StackPanel>
+
+                <Grid Grid.Row="2" Margin="0 10 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        >
+
+                        <TextBlock
+                            Text="Game Name:"
+                            FontSize="18"
+                            FontWeight="Bold"
+                            FontFamily="Montserrat"
+                            Foreground="#12a6aa"
+                            HorizontalAlignment="Center"
+                            />
+
+                        <TextBox
+                            FontSize="21"
+                            FontFamily="Montserrat"
+                            FontWeight="Bold"
+                            Foreground="#393939"
+                            Width="550"
+                            BorderBrush="#12a6aa"
+                            BorderThickness="2 0 2 2"
+                            HorizontalContentAlignment="Center"
+                            Padding="5 0"
+                            Text="{Binding GameName}"/>
+                    </StackPanel>
+
+                    <Grid
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Margin="10"
+                        >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <!--#region TextBlocks-->
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Genre"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Developer Publisher"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Text Lang"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="3"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Sound Lang"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="4"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Windows"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="5"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Processor"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="6"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Ram"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="7"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Video Card"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="8"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Disk Space"/>
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="9"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Version"/>
+
+                        <!--#endregion-->
+
+                        <!--#region TextBoxs-->
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding Genre}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding DeveloperPublisher}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding TextLang}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="3"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding SoundLang}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="4"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding Windows}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="5"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding Processor}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="6"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding Ram}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="7"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding VideoCard}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="8"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding DiskSpace}"
+                            />
+
+                        <TextBox
+                            Margin="0 5 0 0"
+                            Grid.Row="9"
+                            Grid.Column="1"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding Version}"
+                            />
+
+                        <!--#endregion-->
+                    </Grid>
+
+                    <StackPanel
+                        Margin="10"
+                        Grid.Row="1"
+                        Grid.Column="1">
+
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            Text="Description"/>
+
+                        <TextBox 
+                            Height="237"
+                            Margin="0 10 0 0"
+                            FontSize="16"
+                            FontFamily="Exo 2"
+                            Text="{Binding Description}"
+                            />
+
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel 
+                    Grid.Row="3"
+                    Margin="10"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    >
+                    <Button
+                        Margin="20 0"
+                        Template="{DynamicResource nav_btn_temp}"
+                        Width="200"
+                        Background="Green"
+                        Foreground="White"
+                        FontSize="15"
+                        FontFamily="Exo 2"
+                        FontWeight="Bold"
+                        FontStyle="Italic"
+                        Cursor="Hand"
+                        Content="Add"
+                        Command="{Binding AddButtonCommand}"/>
+                </StackPanel>
 
             </Grid>
-        </Grid>
 
-        <!--#endregion-->
-        
-        <!--#endregion-->
-    </Grid>
+            <!--#endregion-->
+
+            <!--#endregion-->
+        </Grid>
+    </ScrollViewer>
 </UserControl>

@@ -33,7 +33,7 @@ namespace TorG
 
             Container = builder.Build();
 
-            navigationStore.CurrentViewModel = Container.Resolve<AdminPanelViewModel>();
+            navigationStore.CurrentViewModel = Container.Resolve<HomeViewModel>();
             MainView mainView = new();
 
             mainView.DataContext = Container.Resolve<MainViewModel>();

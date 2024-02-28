@@ -77,6 +77,7 @@
                     Height="28"
                     VerticalContentAlignment="Center"
                     FontSize="13"
+                    Text="{Binding Username}"
                     >
                     <TextBox.Background>
                         <ImageBrush ImageSource="../Static Files/img/user-icon.png" Stretch="None" AlignmentX="Left"/>
@@ -117,6 +118,7 @@
                     BorderBrush="Azure"
                     Cursor="Hand"
                     Margin="10 0"
+                    Command="{Binding LoginCommand}"
                     />
 
 

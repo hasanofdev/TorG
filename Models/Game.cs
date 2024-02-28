@@ -1,11 +1,37 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace TorG.Models;
 
 public class Game : INotifyPropertyChanged
 {
+
+    #region Fields
+
     private int _id;
+    private string _name;
+    private string _genre;
+    private string _developerpublisher;
+    private string _textlang;
+    private string _soundlang;
+    private string _windows;
+    private string _processor;
+    private int _ram;
+    private string _videocard;
+    private float _diskspace;
+    private string _version;
+    private string _description;
+
+    private string _mainphoto;
+    private string _photo1;
+    private string _photo2;
+    private string _photo3;
+    private string _photo4;
+
+    #endregion
+
+    #region Props
     [Key]
     public int Id
     {
@@ -13,88 +39,131 @@ public class Game : INotifyPropertyChanged
         set { _id = value; OnPropertyChanged(nameof(Id)); }
     }
 
-    private string _name;
     public string Name
     {
         get { return _name; }
         set { _name = value; OnPropertyChanged(nameof(Name)); }
     }
 
-    private string _description;
-    public string Description
-    {
-        get { return _description; }
-        set { _description = value; OnPropertyChanged(nameof(Description)); }
-    }
-
-    private string _genre;
     public string Genre
     {
         get { return _genre; }
         set { _genre = value; OnPropertyChanged(nameof(Genre)); }
     }
 
-    private string _developer_publisher;
-    public string DeveloperPublisher
+    public string Developerpublisher
     {
-        get { return _developer_publisher; }
-        set { _developer_publisher = value; OnPropertyChanged(nameof(DeveloperPublisher)); }
+        get { return _developerpublisher; }
+        set { _developerpublisher = value; OnPropertyChanged(nameof(Developerpublisher)); }
     }
 
-    private string _text_lang;
-    public string TextLang
+    public string Textlang
     {
-        get { return _text_lang; }
-        set { _text_lang = value; OnPropertyChanged(nameof(TextLang)); }
+        get { return _textlang; }
+        set { _textlang = value; OnPropertyChanged(nameof(Textlang)); }
     }
 
-    private string _sound_lang;
     public string SoundLang
     {
-        get { return _sound_lang; }
-        set { _sound_lang = value; OnPropertyChanged(nameof(SoundLang)); }
+        get { return _soundlang; }
+        set { _soundlang = value; OnPropertyChanged(nameof(SoundLang)); }
     }
 
-    private string _windows;
     public string Windows
     {
         get { return _windows; }
         set { _windows = value; OnPropertyChanged(nameof(Windows)); }
     }
 
-    private string _processor;
     public string Processor
     {
         get { return _processor; }
-        set { _windows = value; OnPropertyChanged(nameof(Processor)); }
+        set { _processor = value; OnPropertyChanged(nameof(Processor)); }
     }
 
-    private int _ram;
-    public int RAM
+    public int Ram
     {
         get { return _ram; }
-        set { _ram = value; OnPropertyChanged(nameof(RAM)); }
+        set { _ram = value; OnPropertyChanged(nameof(Ram)); }
     }
 
-    private string _video_card;
     public string VideoCard
     {
-        get { return _video_card; }
-        set { _video_card = value; OnPropertyChanged(nameof(VideoCard)); }
+        get { return _videocard; }
+        set { _videocard = value; OnPropertyChanged(nameof(VideoCard)); }
     }
 
-    private float _disk_space;
     public float DiskSpace
     {
-        get { return _disk_space; }
-        set { _disk_space = value; OnPropertyChanged(nameof(DiskSpace)); }
+        get { return _diskspace; }
+        set { _diskspace = value; OnPropertyChanged(nameof(DiskSpace)); }
     }
 
-    private string _version;
     public string Version
     {
         get { return _version; }
         set { _version = value; OnPropertyChanged(nameof(Version)); }
+    }
+
+    public string Description
+    {
+        get { return _description; }
+        set { _description = value; OnPropertyChanged(nameof(Description)); }
+    }
+
+    public string MainPhoto
+    {
+        get { return _mainphoto; }
+        set { _mainphoto = value; OnPropertyChanged(nameof(MainPhoto)); }
+    }
+
+    public string Photo1
+    {
+        get { return _photo1; }
+        set { _photo1 = value; OnPropertyChanged(nameof(Photo1)); }
+    }
+
+    public string Photo2
+    {
+        get { return _photo2; }
+        set { _photo2 = value; OnPropertyChanged(nameof(Photo2)); }
+    }
+
+    public string Photo3
+    {
+        get { return _photo3; }
+        set { _photo3 = value; OnPropertyChanged(nameof(Photo3)); }
+    }
+
+    public string Photo4
+    {
+        get { return _photo4; }
+        set { _photo4 = value; OnPropertyChanged(nameof(Photo4)); }
+    }
+
+    #endregion
+
+    public Game() { }
+
+    public Game(string name, string genre, string developerpublisher, string textlang, string soundlang, string windows, string processor, int ram, string videocard, float diskspace, string version, string description, string mainphoto, string photo1, string photo2, string photo3, string photo4)
+    {
+        Name = name;
+        Genre = genre;
+        Developerpublisher = developerpublisher;
+        Textlang = textlang;
+        SoundLang = soundlang;
+        Windows = windows;
+        Processor = processor;
+        Ram = ram;
+        VideoCard = videocard;
+        DiskSpace = diskspace;
+        Version = version;
+        Description = description;
+        MainPhoto = mainphoto;
+        Photo1 = photo1;
+        Photo2 = photo2;
+        Photo3 = photo3;
+        Photo4 = photo4;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

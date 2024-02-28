@@ -3,14 +3,15 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>logo-icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Static Files\img\24x24\edit-icon24x24.png" />
+    <None Remove="Static Files\img\24x24\add-game-icon24x24.png" />
+    <None Remove="Static Files\img\24x24\games-icon24x24.png" />
     <None Remove="Static Files\img\24x24\power-off-icon24x24.png" />
     <None Remove="Static Files\img\24x24\statistics-icon24x24.png" />
     <None Remove="Static Files\img\add-user.png" />
@@ -24,6 +25,7 @@
     <None Remove="Static Files\img\logo-icon.ico" />
     <None Remove="Static Files\img\logo.png" />
     <None Remove="Static Files\img\main.png" />
+    <None Remove="Static Files\img\plus-icon.png" />
     <None Remove="Static Files\img\search-tool.png" />
     <None Remove="Static Files\img\upload-icon.png" />
     <None Remove="Static Files\img\user-icon.png" />
@@ -36,6 +38,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.0.0" />
+    <PackageReference Include="DevExpressMvvm" Version="22.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="7.0.1" />
@@ -46,7 +49,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Static Files\img\24x24\edit-icon24x24.png" />
+    <Resource Include="Static Files\img\24x24\add-game-icon24x24.png" />
+    <Resource Include="Static Files\img\24x24\games-icon24x24.png" />
     <Resource Include="Static Files\img\24x24\power-off-icon24x24.png" />
     <Resource Include="Static Files\img\24x24\statistics-icon24x24.png" />
     <Resource Include="Static Files\img\add-user.png" />
@@ -60,6 +64,7 @@
     <Resource Include="Static Files\img\logo-icon.ico" />
     <Resource Include="Static Files\img\logo.png" />
     <Resource Include="Static Files\img\main.png" />
+    <Resource Include="Static Files\img\plus-icon.png" />
     <Resource Include="Static Files\img\search-tool.png" />
     <Resource Include="Static Files\img\upload-icon.png" />
     <Resource Include="Static Files\img\user-icon.png" />
