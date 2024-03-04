@@ -71,4 +71,8 @@
     <Resource Include="Static Files\img\windows.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

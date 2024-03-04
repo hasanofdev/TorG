@@ -147,6 +147,7 @@
                         Cursor="Hand"
                         Grid.Column="1"
                         Margin="5 0"
+                        Command="{Binding SignOutCommand}"
                     />
                 </Grid>
 
@@ -173,11 +174,11 @@
 
             <!--#region Page-Add Games-->
 
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Visibility="Visible">
                 <Grid.RowDefinitions>
                     <RowDefinition  Height="230"/>
                     <RowDefinition Height="120"/>
-                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="380"/>
                     <RowDefinition Height="70"/>
                 </Grid.RowDefinitions>
 
@@ -282,7 +283,8 @@
 
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition/>
                     </Grid.RowDefinitions>
 
                     <StackPanel 
@@ -488,14 +490,23 @@
                             Text="{Binding Processor}"
                             />
 
-                        <TextBox
+
+                        <ComboBox
                             Margin="0 5 0 0"
                             Grid.Row="6"
                             Grid.Column="1"
                             FontSize="16"
                             FontFamily="Exo 2"
                             Text="{Binding Ram}"
-                            />
+                            
+                            >
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="8"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="32"/>
+                            <ComboBoxItem Content="64"/>
+                        </ComboBox>
 
                         <TextBox
                             Margin="0 5 0 0"
@@ -505,6 +516,8 @@
                             FontFamily="Exo 2"
                             Text="{Binding VideoCard}"
                             />
+                        
+                        
 
                         <TextBox
                             Margin="0 5 0 0"
@@ -549,6 +562,32 @@
                             Text="{Binding Description}"
                             />
 
+                    </StackPanel>
+
+                    <StackPanel
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <TextBlock
+                            Margin="0 5 0 0"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            FontSize="16px"
+                            FontFamily="Exo 2"
+                            FontWeight="bold"
+                            HorizontalAlignment="Center"
+                            Text="Download Link"/>
+
+                        <TextBox
+                            FontSize="21"
+                            FontFamily="Montserrat"
+                            FontWeight="Bold"
+                            Foreground="#393939"
+                            Width="550"
+                            BorderBrush="#12a6aa"
+                            BorderThickness="2 0 2 2"
+                            Padding="5 0"
+                            Text="{Binding Link}"/>
                     </StackPanel>
                 </Grid>
 

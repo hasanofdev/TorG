@@ -1,33 +1,24 @@
-﻿//using Microsoft.EntityFrameworkCore;
-//using System.Collections.ObjectModel;
-//using TorG.Models;
-//using TorG.Repositories;
-//using System.Linq;
-//using DevExpress.Mvvm.Native;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using DevExpress.Mvvm.Native;
+using System.Collections.ObjectModel;
+using TorG.Models;
+using TorG.Repositories;
 
-//namespace TorG.Services;
+namespace torg.services;
 
-//class Database_Service
-//{
+class DatabaseService
+{
 
-//    public static ObservableCollection<Game> GetProducts()
-//    {
-//        var Games = new ObservableCollection<Game>();
-//        using (var database = new SQLiteDbContext())
-//        {
-//            database.Games.ForEach(p => Games.Add(p));
-//            database.SaveChanges();
-//        }
-//        return Games;
-//    }
-
-//    public static void SaveProducts(Game Games)
-//    {
-//        using (SQLiteDbContext database = new SQLiteDbContext())
-//        {
-//            database.Games.Add(Games);
-//            database.SaveChanges();
-//        }
-//    }
-//}
+    public static ObservableCollection<Game> GetGames()
+    {
+        var games = new ObservableCollection<Game>();
+        using (var database = new SQLiteDbContext())
+        {
+            database.Games.ForEach (p => games.Add(p)) ;
+            database.SaveChanges();
+        }
+        return games;
+    }
+}
 

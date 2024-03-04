@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using TorG.Extension_Methods;
 
 namespace TorG.Models;
 
@@ -22,12 +23,15 @@ public class Game : INotifyPropertyChanged
     private float _diskspace;
     private string _version;
     private string _description;
+    private string _smalldescription;
 
     private string _mainphoto;
     private string _photo1;
     private string _photo2;
     private string _photo3;
     private string _photo4;
+
+    private string _link;
 
     #endregion
 
@@ -39,10 +43,10 @@ public class Game : INotifyPropertyChanged
         set { _id = value; OnPropertyChanged(nameof(Id)); }
     }
 
-    public string Name
+    public string GameName
     {
         get { return _name; }
-        set { _name = value; OnPropertyChanged(nameof(Name)); }
+        set { _name = value; OnPropertyChanged(nameof(GameName)); }
     }
 
     public string Genre
@@ -111,6 +115,12 @@ public class Game : INotifyPropertyChanged
         set { _description = value; OnPropertyChanged(nameof(Description)); }
     }
 
+    public string SmallDescription
+    {
+        get { return _smalldescription; }
+        set { _smalldescription = value; OnPropertyChanged(nameof(SmallDescription)); }
+    }
+
     public string MainPhoto
     {
         get { return _mainphoto; }
@@ -141,13 +151,19 @@ public class Game : INotifyPropertyChanged
         set { _photo4 = value; OnPropertyChanged(nameof(Photo4)); }
     }
 
+    public string Link
+    {
+        get { return _link; }
+        set { _link = value; OnPropertyChanged(nameof(Link)); }
+    }
+
     #endregion
 
     public Game() { }
 
-    public Game(string name, string genre, string developerpublisher, string textlang, string soundlang, string windows, string processor, int ram, string videocard, float diskspace, string version, string description, string mainphoto, string photo1, string photo2, string photo3, string photo4)
+    public Game(string name, string genre, string developerpublisher, string textlang, string soundlang, string windows, string processor, int ram, string videocard, float diskspace, string version, string description, string mainphoto, string photo1, string photo2, string photo3, string photo4, string link)
     {
-        Name = name;
+        GameName = name;
         Genre = genre;
         Developerpublisher = developerpublisher;
         Textlang = textlang;
@@ -159,11 +175,13 @@ public class Game : INotifyPropertyChanged
         DiskSpace = diskspace;
         Version = version;
         Description = description;
+        SmallDescription= description.GetStringWithIndexToIndex() + "...";
         MainPhoto = mainphoto;
         Photo1 = photo1;
         Photo2 = photo2;
         Photo3 = photo3;
         Photo4 = photo4;
+        Link = link;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

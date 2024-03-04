@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Controls;
 using System.Windows.Input;
 using TorG.Commands;
+using TorG.Extension_Methods;
 using TorG.Models;
 using TorG.Navigations;
 using TorG.Repositories;
@@ -35,6 +36,7 @@ internal class AdminPanelViewModel : BaseViewModel
     private float _diskspace;
     private string _version;
     private string _description;
+    private string _link;
     #endregion
 
     #region Props
@@ -135,12 +137,17 @@ internal class AdminPanelViewModel : BaseViewModel
         set { _version = value; OnPropertyChanged(nameof(Version)); }
     }
 
-    public string Description 
+    public string Description
     {
         get { return _description; }
-        set { _description =  value; OnPropertyChanged(nameof(Description)); }
+        set { _description = value; OnPropertyChanged(nameof(Description)); }
     }
 
+    public string Link
+    {
+        get { return _link; }
+        set { _link = value; OnPropertyChanged(nameof(_link)); }
+    }
 
     #endregion
 
@@ -148,6 +155,7 @@ internal class AdminPanelViewModel : BaseViewModel
 
     public ICommand ChooseFileCommand { get; set; }
     public ICommand AddButtonCommand { get; set; }
+    public ICommand SignOutCommand { get; set; }
 
     #endregion
 
@@ -162,6 +170,12 @@ internal class AdminPanelViewModel : BaseViewModel
         EditPage_Photo4 = "../Static Files/img/plus-icon.png";
         ChooseFileCommand = new RelayCommand(ExecuteChooseImage);
         AddButtonCommand = new RelayCommand(ExecuteAddButtonCommand);
+        SignOutCommand = new RelayCommand(ExecuteSignOutCommand);
+    }
+
+    private void ExecuteSignOutCommand(object obj)
+    {
+        _navigationStore.CurrentViewModel = new HomeViewModel(_navigationStore);
     }
 
     private void ExecuteAddButtonCommand(object? obj)
@@ -170,7 +184,7 @@ internal class AdminPanelViewModel : BaseViewModel
         {
             context.Games.Add(new Game()
             {
-                Name = GameName,
+                GameName = GameName,
                 Genre = Genre,
                 Developerpublisher = DeveloperPublisher,
                 Textlang = TextLang,
@@ -182,11 +196,13 @@ internal class AdminPanelViewModel : BaseViewModel
                 DiskSpace = DiskSpace,
                 Version = Version,
                 Description = Description,
+                SmallDescription = Description.GetStringWithIndexToIndex() + "...",
                 MainPhoto = EditPage_MainPhoto,
                 Photo1 = EditPage_Photo1,
                 Photo2 = EditPage_Photo2,
                 Photo3 = EditPage_Photo3,
                 Photo4 = EditPage_Photo4,
+                Link = Link
 
             });
 

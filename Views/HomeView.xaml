@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:product_control="clr-namespace:TorG.Assets.User_Controls"
+             xmlns:user_controls="clr-namespace:TorG.Assets.User_Controls"
              xmlns:local="clr-namespace:TorG.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="4000"
+             xmlns:dvxcc="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             mc:Ignorable="d"
+             
+             d:DesignHeight="8000"
              d:DesignWidth="1349"
              Background="White">
     <ScrollViewer>
@@ -18,7 +20,7 @@
         </ScrollViewer.Background>
         <Grid
             Width="1140"
-            Background="White"
+            Background="Transparent"
             Margin="0 40 0 0">
             <Grid.Effect>
                 <DropShadowEffect 
@@ -31,7 +33,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="150"/>
                 <RowDefinition Height="45"/>
-                <RowDefinition Height="3360"/>
+                <RowDefinition Height="4000"/>
                 <RowDefinition Height="300"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
@@ -208,7 +210,7 @@
 
             <Line Grid.Row="1" Stroke="#dfe1e2" X1="0" X2="1140" StrokeThickness="2" VerticalAlignment="Bottom" Width="1140"/>
 
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="2*"/>
@@ -1299,10 +1301,25 @@
                     </Border>
                 </Grid>
 
-
-                <WrapPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2" Background="Red">
-                    <!--Products-->
-                </WrapPanel>
+                <ItemsControl ItemsSource="{Binding Games}" Grid.Row="2" Grid.Column="2" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <user_controls:GameBoxControl GameName="{Binding GameName}" Padding="10" MainPhoto="{Binding MainPhoto}" SmallDescription="{Binding SmallDescription}">
+                                <dvxcc:Interaction.Behaviors>
+                                    <dvxcc:EventToCommand 
+                                        EventName="Click" 
+                                        Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},AncestorLevel=2}, Path=DataContext.GameClickCommand}">
+                                    </dvxcc:EventToCommand>
+                                </dvxcc:Interaction.Behaviors>
+                            </user_controls:GameBoxControl>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </Grid>
 
             <Grid Grid.Row="3"
